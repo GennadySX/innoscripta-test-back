@@ -18,7 +18,6 @@ class CreatePizzaTypesTable extends Migration
             $table->foreignId('pizza_id');
             $table->string('name');
             $table->float('cost');
-            $table->timestamps();
         });
     }
 

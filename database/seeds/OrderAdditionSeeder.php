@@ -12,5 +12,10 @@ class OrderAdditionSeeder extends Seeder
     public function run()
     {
         //
+        $order_addition = new \App\OrderAddition();
+        $order_addition->fill([
+            'order_id'=>1,
+            'addition_id'=>1
+        ])->save();
     }
 }

@@ -19,7 +19,6 @@ class CreatePizzasTable extends Migration
             $table->text('composition');
             $table->string('image');
             $table->text('description');
-            $table->timestamps();
         });
     }
 

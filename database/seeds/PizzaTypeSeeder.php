@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Seeder;
@@ -12,5 +13,11 @@ class PizzaTypeSeeder extends Seeder
     public function run()
     {
         //
+        $pizza_type = new \App\PizzaType();
+        $pizza_type->fill([
+            'pizza_id'=>'1',
+            'name'=>'Mexicano',
+            'cost'=>'24.55',
+        ])->save();
     }
 }

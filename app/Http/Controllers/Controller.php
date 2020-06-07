@@ -12,8 +12,10 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function json($data, $status=200) {
-        return response()->json(['status' => $status==200 ? true : false, $data], $status);
+    public function json($data, $status = 200)
+    {
+        $data['status'] = $status == (200 || 201 || 202 || 302) ? true : false;
+        return response()->json($data, $status);
     }
 
 }

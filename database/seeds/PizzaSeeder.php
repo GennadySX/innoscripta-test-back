@@ -12,5 +12,12 @@ class PizzaSeeder extends Seeder
     public function run()
     {
         //
+        $pizza = new \App\Pizza();
+        $pizza->fill([
+            'name'=>'Mexicano',
+            'composition'=>"Ham, tomato, cheese, dough, mayonnaise",
+            'image'=>'/uploads/pizza.png',
+            'description' => 'this is delicious!'
+        ])->save();
     }
 }

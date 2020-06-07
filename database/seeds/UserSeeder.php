@@ -12,5 +12,11 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
+        $user = new \App\User();
+        $user->fill([
+            'email'=>'root@mail.com',
+            'name'=>'John Doe',
+            'password'=>'unlock001',
+        ])->save();
     }
 }

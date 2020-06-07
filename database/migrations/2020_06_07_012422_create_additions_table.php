@@ -20,7 +20,6 @@ class CreateAdditionsTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->float('cost');
-            $table->timestamps();
         });
     }
 

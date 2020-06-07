@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable();
             $table->foreignId('pizza_id');
-            $table->foreignId('pizza_type_id');
+            $table->foreignId('pizza_type_id')->nullable();
             $table->string('fullName')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();

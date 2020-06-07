@@ -12,5 +12,13 @@ class LangBoxSeeder extends Seeder
     public function run()
     {
         //
+        $lang_box = new \App\LangBox();
+        $lang_box->fill([
+            'model_type'=>'App/Pizza',
+            'model_id' => '1',
+            'column_name' => 'name',
+            'language_id' => 2,
+            'value' => "Mexicano`s"
+        ])->save();
     }
 }
