@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', 'UserController@login');
+Route::post('register', 'UserController@register');
+
+Route::group(['prefix'=>'pizza'], function() {
+    Route::get('/', 'PizzaController@index');
+});
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth:api'], function() {
+    Route::get('user', function (Request $request) {
+        return response()->json(['status'=>true, 'user'=> $request->user()]);
+    });
 });
