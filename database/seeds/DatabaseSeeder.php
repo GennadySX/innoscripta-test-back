@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LangBoxSeeder::class);
         $this->call(OrderSeeder::class);
         $this->call(OrderAdditionSeeder::class);
+        $this->call(DollarBrokerSeeder::class);
 
     }
 }

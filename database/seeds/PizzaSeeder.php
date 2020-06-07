@@ -19,5 +19,7 @@ class PizzaSeeder extends Seeder
             'image'=>'/uploads/pizza.png',
             'description' => 'this is delicious!'
         ])->save();
+
+        $pizza = factory(\App\Pizza::class, 9)->create();
     }
 }

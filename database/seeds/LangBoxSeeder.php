@@ -14,7 +14,7 @@ class LangBoxSeeder extends Seeder
         //
         $lang_box = new \App\LangBox();
         $lang_box->fill([
-            'model_type'=>'App/Pizza',
+            'model_type'=>\App\Pizza::class,
             'model_id' => '1',
             'column_name' => 'name',
             'language_id' => 2,

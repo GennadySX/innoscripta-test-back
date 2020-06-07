@@ -16,8 +16,23 @@ class PizzaTypeSeeder extends Seeder
         $pizza_type = new \App\PizzaType();
         $pizza_type->fill([
             'pizza_id'=>'1',
-            'name'=>'Mexicano',
-            'cost'=>'24.55',
+            'name'=>'Small',
+            'cost'=>'15.55',
         ])->save();
+        $pizza_type = new \App\PizzaType();
+        $pizza_type->fill([
+            'pizza_id'=>'1',
+            'name'=>'Middle',
+            'cost'=>'17.55',
+        ])->save();
+        $pizza_type = new \App\PizzaType();
+        $pizza_type->fill([
+            'pizza_id'=>'1',
+            'name'=>'Large',
+            'cost'=>'19.55',
+        ])->save();
+
+        $pizza_type = factory(\App\PizzaType::class, 27)->create();
+
     }
 }

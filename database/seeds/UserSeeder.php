@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -16,7 +17,9 @@ class UserSeeder extends Seeder
         $user->fill([
             'email'=>'root@mail.com',
             'name'=>'John Doe',
-            'password'=>'unlock001',
+            'password'=>bcrypt('unlock001'),
         ])->save();
+
+        $user = factory(App\User::class, 3)->create();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return $this->json(['orders' => Order::where('user_id', Auth::id())->with('order_addition')->get()]);
     }
 
     /**
@@ -22,9 +23,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Order $order)
     {
-        //
+        return $order->fill($request->all())->save() ?
+            $this->json(['order' => $order])
+            : $this->json(['err' => 'validation content!'], 204);
     }
 
     /**

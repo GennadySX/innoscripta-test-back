@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pizza;
+use App\DollarBroker;
 use Illuminate\Http\Request;
 
-class PizzaController extends Controller
+class DollarBrokerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        return $this->json(['list' => Pizza::with('lang_box', 'type')->get()]);
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class PizzaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  \App\DollarBroker  $dollarBroker
      * @return \Illuminate\Http\Response
      */
-    public function show(Pizza $pizza)
+    public function show(DollarBroker $dollarBroker)
     {
         //
     }
@@ -52,10 +52,10 @@ class PizzaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  \App\DollarBroker  $dollarBroker
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pizza $pizza)
+    public function edit(DollarBroker $dollarBroker)
     {
         //
     }
@@ -64,10 +64,10 @@ class PizzaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pizza  $pizza
+     * @param  \App\DollarBroker  $dollarBroker
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pizza $pizza)
+    public function update(Request $request, DollarBroker $dollarBroker)
     {
         //
     }
@@ -75,10 +75,10 @@ class PizzaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  \App\DollarBroker  $dollarBroker
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pizza $pizza)
+    public function destroy(DollarBroker $dollarBroker)
     {
         //
     }

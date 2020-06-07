@@ -21,7 +21,10 @@ Route::group(['prefix'=>'pizza'], function() {
     Route::get('/', 'PizzaController@index');
 });
 
-Route::group(['prefix'=>'admin', 'middleware'=>'auth:api'], function() {
+Route::group(['prefix'=>'profile', 'middleware'=>'auth:api'], function() {
+    Route::get('history', 'OrderController@index');
+
+
     Route::get('user', function (Request $request) {
         return response()->json(['status'=>true, 'user'=> $request->user()]);
     });
