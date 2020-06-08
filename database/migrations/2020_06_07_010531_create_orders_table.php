@@ -16,11 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable();
-            $table->foreignId('pizza_id');
-            $table->foreignId('pizza_type_id')->nullable();
             $table->string('fullName')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
+            $table->json('order');
             $table->timestamps();
         });
     }

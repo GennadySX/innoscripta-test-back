@@ -16,10 +16,10 @@ class PizzaSeeder extends Seeder
         $pizza->fill([
             'name'=>'Mexicano',
             'composition'=>"Ham, tomato, cheese, dough, mayonnaise",
-            'image'=>'/uploads/pizza.png',
+            'image'=>'/uploads/pizza_1.png',
             'description' => 'this is delicious!'
         ])->save();
 
-        $pizza = factory(\App\Pizza::class, 9)->create();
+        $pizza = factory(\App\Pizza::class, 7)->create();
     }
 }

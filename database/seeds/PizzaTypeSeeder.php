@@ -1,7 +1,8 @@
-
 <?php
 
+use App\PizzaType;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class PizzaTypeSeeder extends Seeder
 {
@@ -10,29 +11,18 @@ class PizzaTypeSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
-        $pizza_type = new \App\PizzaType();
-        $pizza_type->fill([
-            'pizza_id'=>'1',
-            'name'=>'Small',
-            'cost'=>'15.55',
-        ])->save();
-        $pizza_type = new \App\PizzaType();
-        $pizza_type->fill([
-            'pizza_id'=>'1',
-            'name'=>'Middle',
-            'cost'=>'17.55',
-        ])->save();
-        $pizza_type = new \App\PizzaType();
-        $pizza_type->fill([
-            'pizza_id'=>'1',
-            'name'=>'Large',
-            'cost'=>'19.55',
-        ])->save();
-
-        $pizza_type = factory(\App\PizzaType::class, 27)->create();
-
+        $size = ['Small', 'Middle', 'Large'];
+        for ($i = 0; $i <= 8; $i++) {
+            for ($j = 0; $j < 3; $j++) {
+                $pizza_type = new PizzaType();
+                $pizza_type->fill([
+                    'pizza_id' => $i,
+                    'name' => $size[$j],
+                    'cost' => $faker->randomFloat(2, 10, 50),
+                ])->save();
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Addition;
 use App\Pizza;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        return $this->json(['list' => Pizza::with('lang_box', 'type')->get()]);
+        return $this->json([
+            'list' => Pizza::with('lang_box', 'type')->get(),
+            'additions' => Addition::all()
+            ]);
     }
 
     /**

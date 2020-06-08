@@ -19,7 +19,10 @@ Route::post('register', 'UserController@register');
 
 Route::group(['prefix'=>'pizza'], function() {
     Route::get('/', 'PizzaController@index');
+
 });
+
+Route::post('/cart/confirm', 'OrderController@create');
 
 Route::group(['prefix'=>'profile', 'middleware'=>'auth:api'], function() {
     Route::get('history', 'OrderController@index');

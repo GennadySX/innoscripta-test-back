@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(LangBoxSeeder::class);
         $this->call(OrderSeeder::class);
-        $this->call(OrderAdditionSeeder::class);
         $this->call(DollarBrokerSeeder::class);
 
     }
