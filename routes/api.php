@@ -23,11 +23,11 @@ Route::group(['prefix'=>'pizza'], function() {
 });
 
 Route::post('/cart/confirm', 'OrderController@create');
+Route::post('/cart/confirm/user', 'OrderController@createByUser')->middleware('auth:api');
 
-Route::group(['prefix'=>'profile', 'middleware'=>'auth:api'], function() {
+Route::group(['prefix'=>'profile', 'middleware'=>['auth:api', 'cors']], function() {
     Route::get('history', 'OrderController@index');
-
-
+    Route::get('history', 'OrderController@index');
     Route::get('user', function (Request $request) {
         return response()->json(['status'=>true, 'user'=> $request->user()]);
     });
